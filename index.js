@@ -1,4 +1,7 @@
-// Import the Tester class from the interview prompt subfolder.
+/**
+  INSTRUCTIONS
+  Import the Tester class from the interview prompt subfolder.
+*/
 const Tester = require("./GenoTech/tests");
 
 // Run the tests.
