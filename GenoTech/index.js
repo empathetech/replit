@@ -31,11 +31,8 @@ class Solution {
       // matches you find.
       let i = 0;
       while (true) {
-        const substring = genome.substring(i);
-        const d = substring.search(searchString);
-        console.log({ i, d, substring })
-        if (d === -1) break;
-        i += d;
+        i = genome.indexOf(searchString, i);
+        if (i === -1) break; 
         result[searchString].push(i);
         i += 1;
       }
