@@ -22,8 +22,25 @@ class Solution {
   }
   
   searchGenome(genome, searchStrings) {
-    // Implementation here
-    return true;
+    const result = {};
+    // Iterate through each search string
+    for (const searchString of searchStrings) {
+      result[searchString] = [];
+
+      // Window your string into substrings based on what
+      // matches you find.
+      let i = 0;
+      while (true) {
+        const substring = genome.substring(i);
+        const d = substring.search(searchString);
+        console.log({ i, d, substring })
+        if (d === -1) break;
+        i += d;
+        result[searchString].push(i);
+        i += 1;
+      }
+    }
+    return result;
   }
 }
 
