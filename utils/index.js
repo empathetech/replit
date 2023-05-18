@@ -25,7 +25,7 @@ const deepMatch = (a, b) => {
     if (a.length !== b.length) return false;
     // A match is if all the indexed element values at the same position
     // match. We care above value.
-    return a.every((_, i) => deepCompare(a[i], b[i]));
+    return a.every((_, i) => deepMatch(a[i], b[i]));
   }
   // Are these both objects?
   if (a instanceof Object || b instanceof Object) {
@@ -33,7 +33,7 @@ const deepMatch = (a, b) => {
     const keySet = new Set(Object.keys(a).concat(Object.keys(b)));
     // A match is if all of the key value pairs exist and match.
     // We don't care about order though.
-    return Array.from(keySet).every((k) => deepCompare(a[k], b[k]));
+    return Array.from(keySet).every((k) => deepMatch(a[k], b[k]));
   }
 
 
