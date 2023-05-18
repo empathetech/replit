@@ -23,6 +23,7 @@ class Solution {
   
   searchGenome(genome, searchStrings) {
     // Implementation here
+    return true;
   }
 }
 
